@@ -1,0 +1,21 @@
+Standarteditor (vi), den jede Linuxdistribution installiert
+
+vim dateiname
+	# öffnet eine Datei mit dem namen dateiname, oder legt eine neue Datei mit diesem Namen an
+
+Befehlsmodus
+	Standartmäßig befindet sich die neu geöffnete Datei im Befehlsmodus
+
+Eingabemodus
+	Um in die Datei schreiben zu können muss ich in den Einfügemodus wechseln.
+	Die Eingabe eines i zwingt vim in diesen Modus
+
+Speichern
+	Befindet sich der Editor im Einfügemodus, muss zunächst in den Befehlsmodus gewechselt werden.
+	Dies geschiet mit der ESC-Taste.
+	Im Befehlsmodus wird dann eingegeben:
+		:wq (#write #quit)
+
+Abbrechen
+	Zunächst in den Befehlsmodus wechseln, dann:
+		:q! (#quit erzwingen ohne #write zu speichern)

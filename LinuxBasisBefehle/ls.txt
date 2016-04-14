@@ -1,0 +1,7 @@
+ls		=	Zeigt Dateien und Ordner an.
+
+ls -la		=	#l die Langfassung wird angezeigt
+			#a auch versteckte Daten werden angezeigt
+
+ls -l		=	Zeigt den Inhalt des Ordner Verzeichnes in der Langfassung an
+

@@ -1,0 +1,14 @@
+Nach einem Browseraufruf mit
+	localhost:3000/events
+
+a. sucht der Parser in config/routes.rb nach der Route
+	get "events" => "events#index"
+b. geht zum EventsController
+	controllers/events_controller.rb
+c. geht zur Index-Action
+	def index
+		..
+	end
+d. geht zur Darstellungsebene:
+	views/events/index.html.erb
+	ersetzt dort den Ruby-Code und schickt das Ergebnis zum Browser

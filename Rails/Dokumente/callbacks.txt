@@ -1,0 +1,16 @@
+Die Entwickler von Rails sind bemüht Möglichkeiten zu schaffen, damit Code nicht wiederholt werden muss.
+
+Beispiel:
+Im Controller gibt es in vielen Actions die Notwendigkeit einen bestimmten Event in der Datenbank zu finden und in der @event-Variable zu speichern.
+Damit diese Teile Code nicht ständig wiederholt werden muss, kann sie in eine before_action ausgelagert werden.
+Wie der Name schon sagt, wird diese Methode vor jeder anderen Action innerhalb des Controllers ausgeführt.
+
+before_action :set_event, only [:show, :edit, :update, :destroy]
+
+Die Methode before_action erwartet als ersten Parameter den Namen einer Methode, die entweder im application_controller oder im Cntroller selbst definiert ist. Alle weiteren parameter sind optional.
+
+Am Ende des event_controllers wird nun die Methode definiert:
+	def set_event
+		@event = Event.find(params[:id])
+
+Da diese Methode nicht außerhalb des Controllers werden soll, wird sie innerhalb eines als Private deklarierten Bereiches definiert. Alles was unterhalb von Private steht ist von außen nicht erreichbar.

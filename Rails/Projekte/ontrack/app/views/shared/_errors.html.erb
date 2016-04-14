@@ -1,0 +1,18 @@
+	<% if object.errors.any? %>
+		<div class="row">
+			<div class="medium-3 columns">
+				&nbsp;
+			</div>
+			<div class="medium-9 columns">
+				<div class="panel">
+					<h3>Opps! The <%= object.class.name.titleize.downcase %> can't be saved</h3>
+					Crrect the following <%= pluralize(object.errors.count, "error") %>:
+					<ul>
+						<% object.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<% end %>

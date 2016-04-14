@@ -1,0 +1,10 @@
+1. Erxstellen Sie eine Applikation <flix>
+2. Starten Sie die App
+3. erstellen Sie einen Controller mit der Bezeichnung movies
+4. Legen Sie eine Route zur Index-Action des Controllers an
+5. Erstellen Sie eine Index Action
+6. Erstellen Sie eine Template das die Ausgabe erzeugt:
+	MOVIES
+	- Iron Man
+	- Superman
+	- Spider-Man

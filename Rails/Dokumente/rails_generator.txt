@@ -1,0 +1,7 @@
+Anlegen eines Controllers:
+	rails g controller events						(Controller fast immer im Plural)
+
+Anlegen eines Models:
+	rails g model event name:string location:string price:decimal
+		#Das Model Event (Tabelle: events) wird mit den Spalten: name, location und price angelegt
+

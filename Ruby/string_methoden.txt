@@ -1,0 +1,17 @@
+Die Programmiersprache RUBY ist streng Klassen/Objekt - orientiert.
+Das bedeutet, dass eine Variable vom Datentyp Integer ein Objekt der Klasse Fixnum ist, usw.
+Die jeweilige Klasse bietet für das Objekt vorgefertigte Methoden an.
+
+var = "teststring"
+var.class
+	# die Methode class auf das Objekt var angewandt gibt die Klasse des Objektes aus.
+var.reverse
+	# die Anwendung der Methode reverse erzeugt eine Ausgabe in der der String umgekehrt wird. Der Wert der Variable ändert 		sich nicht.
+var.reverse!
+	# ! am Ende einer Methode ändert den Variablenwert.
+var.center(30)
+	# Methoden erwarten manchmal einen Parameter
+var.reverse.center(30)
+	# Methoden können kaskadiert werden. Die folgenden Methode wird auf die Ausgabe der vorherigen angewandt.
+var.empty?
+	# Methoden mit einem ? am Ende geben prinzipiell einen Boolean (true oder false) zurück.

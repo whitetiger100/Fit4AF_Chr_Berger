@@ -1,0 +1,13 @@
+Ruby-Console
+	<irb> auf der Konsole eingeben
+		# es startet eine Ruby-Console, die alle Ruby-Konstrukte kennt und interpretieren kann
+
+	exit
+		# beenden der Ruby-Console und Rückkehr zur Linux-Bash
+
+Skripting über Textdatei
+	Ruby-Befehle in einer Textdatei gespeichert werden.
+	Die Datei sollte die Endung rb haben: hello_world.rb
+
+	ruby hello_world.rb
+		# Der Befehl wird in der Linux-Bash ausgeführt

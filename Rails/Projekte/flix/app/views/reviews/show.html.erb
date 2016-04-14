@@ -1,0 +1,16 @@
+<h3>Bewertung von <%= @review.name %> für den Movie <%= @movie.title %></h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>Kommentar</th>
+			<th>Löschen</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td><%= @review.comment %></td>
+				<td><%= link_to "<i class='fi-trash icon-red'></i>".html_safe, movie_review_path(@movie.id, @review.id), method: :delete, data: {confirm: "Wirklich löschen"} %></td>
+			</tr>
+	</tbody>
+</table>

@@ -1,0 +1,17 @@
+<h1>LOGIN</h1>
+<%= form_tag(session_path) do %>
+	<p>
+		<%= label_tag :email %>
+		<%= email_field_tag :email, nil, autofocus: true %>
+	</p>
+	<p>
+		<%= label_tag :password %>
+		<%= password_field_tag :password %>
+	</p>
+	<p>
+		<%= submit_tag 'Einloggen' %>
+	</p>
+
+
+
+<% end %>

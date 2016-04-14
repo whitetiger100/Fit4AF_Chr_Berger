@@ -1,0 +1,31 @@
+Anlegen eines neuen Datensatzes:
+	a = Event.new(name: "Alt-J", location: "Berlin", price: 40.00)
+	a.save
+
+	Event.create(name: "Beatles", location: "Manchaster", price: 10.00)
+
+Ausgeben von Datensätzen:
+	Event.all
+		#gibt alle Datensätze aus, die in der Tabelle vorhanden sind.
+			
+
+Methoden im Model:
+Es gibt zwei Arten von Methoden.
+Die sogenanneten Klassenmethoden, die mit dem Model-Namen aufgerufen werden werden, und die Objekt-Methoden, die mit einer Instanz der Klasse aufgerufen werden.
+
+Beispiel: Klassenmethode:
+	Aufruf: (im controller)
+		@events = Event.upcomming
+	Definition: (im model)
+		def self.upcomming
+			where("start_at>= ?", Time.now).order("start_at")
+		end
+
+Beispiel: Objektmethode:
+	Aufruf: (im view, im controller)
+		@event = Event.find(2)
+		@event.free?
+	Definition: (im model)
+		def free?
+			price.blank?
+		end

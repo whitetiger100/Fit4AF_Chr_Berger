@@ -1,0 +1,28 @@
+<h1><%= @event.name %></h1>
+
+<p><%= @event.description %></p>
+
+<p><%= image_for(@event) %></p>
+<p>
+	<h3>Wann</h3>
+	<%= @event.start_at %>
+
+	<h3>Wo</h3>
+	<%= @event.location %>
+
+	<h3>Preis</h3>
+	<%= @event.price %>
+
+ <h3>Anzahl freie Plätze</h3>
+ <%= pluralize(@event.spots_left, 'spot') %>
+</p>
+
+<p>
+	<div class="button-group">
+		<%= link_to "Alle Events anzeigen", events_path, class: "button" %>
+		<%= link_to "Back", request.referer, class: "button" %>
+		<% if @event.spots_left > 0 %>
+			<%= link_to "Registrieren!!!", new_event_registration_path(@event.id), class: "button" %>
+		<% end %>
+	</div>
+</p>

@@ -1,0 +1,17 @@
+<h1><%= @project.title %></h1>
+
+<div class="panel">
+	Start date: <%= @project.start_date %>
+	<hr />
+	<%= @project.description %>
+	<hr />
+	<%= link_to "Show project tasks", project_tasks_path(@project.id), class:"button" %>
+</div>
+
+<div class="panel">
+	<div class="button-group">
+		<%= link_to "Show all projects", projects_path, class: "button" %>
+		<%= link_to "Back", request.referer, class: "button" %>
+	</div>
+</div>
+

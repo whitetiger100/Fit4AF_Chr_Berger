@@ -1,0 +1,13 @@
+Software installieren
+
+	sudo apt-get install git
+		# sudo:			der User pan ist Mitglied der Adminstratoren.
+								Mit sudo vor einem Befehl kann dieser User adminstrative Aufgaben wahrnehmen.
+								Er wird zur Eingabe seines Passwortes aufgefordert.
+		# apt-get:	der Basisbefehl einer Debian (Ubuntu)-Distribution für die Softwareverwaltung.
+		# install:	Installiert Software.
+		# git:			Name der zu installierenden Software.
+
+	sudo apt-get update
+		# Dieser Befehl wird vor jeder Neuinstallation ausgeführt,
+			da mit diesem Befehl der letzte Versionsstand aller Softwarepakete geholt wird.

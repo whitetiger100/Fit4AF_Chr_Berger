@@ -1,0 +1,5 @@
+a. erzeugen Sie ein Verzeichnis Links_etc
+b. erstellen Sie in dem Verzeichnis eine Datei test
+c. schreiben Sie in die Datei die Zeichenkette 'Verzeichnisinhalt:'
+i.
+	--> echo `wc -w < test.txt` " Worte" > anzahl

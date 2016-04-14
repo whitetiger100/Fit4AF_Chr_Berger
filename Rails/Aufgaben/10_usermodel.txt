@@ -1,0 +1,6 @@
+MOVIE - Applikation
+	Erzeugen Sie eine resource mit dem Namen user
+		Felder: name, email, password
+	Zulassen, dass das bcrypt-gem greift
+	Validations: name und email auf ausgefüllt überprüfen und email auf Format prüfen
+	2 Testuser anlegen

@@ -1,0 +1,35 @@
+ALLGEMEIN
+Rails stellt eine ganze Reihe von Helpern zur Verfügung, mit deren Hilfe Zahlen und Text formatiert und gestaltet werden kann.
+Es gibt in Rails zwei Arten VIEW-Helper zu defnieren: im application_controller.rb und im Verzeichnis app/helper/application_helper.rb.
+
+RailsHelper:
+content_tag
+	ein html-Tag wird durch Rails erstellt
+
+pluralize
+	die englische Singular- und Pluralform wird je nach Anzahl gewählt
+
+number_to_currency
+	eine Zahl wird im aktuellen Währungsformat dargestellt
+
+html_safe
+	ein String wird so zum Browser gesendet wie er geschrieben steht, die von Rails üblicherweise durchgeführte Maskierung von Tags wird verhindert
+
+EIGENER HELPER
+Immer wenn Code sich wiederholen würde, wird dieser Code in einen Helper gepackt.
+Rails unterstützt dieses Vorgehen mit den Dateien im Verzeichnis app/helpers.
+Wenn im View ein Funktionsaufruf, z.B. format_price(objekt_name) erfolgt, werden alle Dateien in diesem Ordner nach einer Funktion mit disem Namen und einem Parameter durchsucht.
+
+Beispiel:
+Aufruf in der View index.html.erb:
+	<td><%= format_price(event) %></td>
+
+Definition in app/helpers/application_helper.rb
+		def format_price(event)
+		if event.free?
+			number_to_currency(event.price, unit: " € ")
+		else
+			content_tag(:strong, "FREE")
+			#"<strong>FREE</strong>".html_safe
+		end
+	end
