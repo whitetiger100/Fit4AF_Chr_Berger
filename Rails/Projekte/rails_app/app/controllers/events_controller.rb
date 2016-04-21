@@ -1,12 +1,14 @@
 class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 	before_action :require_signin, except: [:index]
+	before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@events = Event.upcoming
 	end
 
 	def show
+		@likers = @event.likers
 	end
 
 	def new

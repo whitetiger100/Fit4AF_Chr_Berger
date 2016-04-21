@@ -1,22 +1,7 @@
 <h3>Neue Registrierung für Event: <%= @event.name %></h3>
 <%= render "shared/errors", object: @registration %>
 <%= form_for [@event, @registration] do |f| %>
-	<div class="row">
-		<div class="medium-3 columns">
-			<%= f.label :name %>
-		</div>
-		<div class="medium-9 columns">
-			<%= f.text_field :name %>
-		</div>
-	</div>
-	<div class="row">
-		<div class="medium-3 columns">
-			<%= f.label :email %>
-		</div>
-		<div class="medium-9 columns">
-			<%= f.email_field :email %>
-		</div>
-	</div>
+
 	<div class="row">
 		<div class="medium-3 columns">
 			<%= f.label :how_heard %>

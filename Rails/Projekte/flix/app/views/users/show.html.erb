@@ -13,5 +13,13 @@
 	<%= link_to 'Edit', edit_user_path(@user) %> |
 	<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>
-
+<br />
+<% if @user.reviews.any? %>
+	<h2>Bewertungen abgegeben:</h2>
+	<ul>
+		<% @user.reviews.each do |review| %>
+			<li><%= link_to review.movie.title, review.movie %></li>
+		<% end %>
+	</ul>
+<% end %>
 <%= link_to 'Back', users_path %>

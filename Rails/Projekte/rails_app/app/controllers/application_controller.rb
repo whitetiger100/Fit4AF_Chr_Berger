@@ -17,9 +17,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-		def set_sidebar_events
-			@sidebar_events = Event.upcoming
-		end
+  def require_admin
+    unless current_user_admin?
+      redirect_to root_url, alert: "Du kein Admin, du in die Hölle kommen!"
+    end
+  end
+
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
+  helper_method :current_user_admin?
+
+private
+
+	def set_sidebar_events
+		@sidebar_events = Event.upcoming
+	end
 
 end

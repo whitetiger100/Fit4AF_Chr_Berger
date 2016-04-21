@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user = User.authenticate(params[:email], params[:password])
     	session[:user_id] = user.id
     	flash[:notice] = "Hey BOY, back again"
-    	redirect_to session[:intended_url] || root_urls
+    	redirect_to session[:intended_url] || root_url
       session[:intended_url] = nil
     else
       flash.now[:alert] = "Email nicht gefunden oder falsches Passwort"

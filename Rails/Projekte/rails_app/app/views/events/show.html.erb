@@ -16,7 +16,16 @@
  <h3>Anzahl freie Plätze</h3>
  <%= pluralize(@event.spots_left, 'spot') %>
 </p>
-
+<hr />
+<% if @likers.any? %>
+	<h3>Likers</h3>
+	<ul>
+		<% @likers.each do |user| %>
+			<li><%= link_to user.name, user %></li>
+		<% end %>
+	</ul>
+<% end %>
+<hr />
 <p>
 	<div class="button-group">
 		<%= link_to "Alle Events anzeigen", events_path, class: "button" %>
