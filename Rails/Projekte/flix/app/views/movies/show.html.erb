@@ -25,6 +25,23 @@
  <h3>Besetzung</h3>
  <%= @movie.cast %>
 </p>
+<hr />
+	<h3>Fans:</h3>
+<% if @fans.any? %>
+	<ul>
+		<% @fans.each do |user| %>
+			<li><%= link_to user.name, user %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Sei der erste Fan, du Penner.</p>
+<% end %>
+<% if @current_favorite %>
+	<%= button_to "Kein Fan mehr sein!", movie_favorite_path(@movie, @current_favorite), class: "button", method: :delete %>
+<% else %>
+	<%= button_to "Fan werden", movie_favorites_path(@movie), class: "button" %>
+<% end %>
+<hr />
 <table>
 	<thead>
 		<tr>

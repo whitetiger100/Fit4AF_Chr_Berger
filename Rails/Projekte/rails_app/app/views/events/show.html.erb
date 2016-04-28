@@ -17,13 +17,20 @@
  <%= pluralize(@event.spots_left, 'spot') %>
 </p>
 <hr />
-<% if @likers.any? %>
 	<h3>Likers</h3>
+<% if @likers.any? %>
 	<ul>
 		<% @likers.each do |user| %>
 			<li><%= link_to user.name, user %></li>
 		<% end %>
 	</ul>
+<% else %>
+	<p>Sei der erste, dem das Gefällt, du Penner.</p>
+<% end %>
+<% if @current_like %>
+	<%= button_to "Unlike", event_like_path(@event, @current_like), class: "button", method: :delete %>
+<% else %>
+	<%= button_to "Like", event_likes_path(@event), class: "button" %>
 <% end %>
 <hr />
 <p>

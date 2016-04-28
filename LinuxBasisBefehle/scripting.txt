@@ -1,0 +1,57 @@
+Bash-Skripting wird für administrative, sich wiederholende Tätigkeiten verwendet, bei der die Eingabe von mehreren Bashbefehlen notwendig ist.
+
+Skripte beginnen in der 1. Zeile immer mit dem Hinweis auf den Interpreter. Diese Zeile wird Shebang-Zeile genannt. Ist die Bash als Interpreter vorgesehen, dann lautet die Zeile:
+	#!/bin/bash
+
+Bevor ein Skript ausgeführt werden kann muss die entsprechende Berechtigung gesetzt werden.
+	chmod u+x datei_name.sh
+	(chmod = Befehl; u+x = der angemeldete User bekommt das executable-recht für diese Datei)
+Der Aufruf einers Skriptes benötigt eine absolute Pfadangabe.
+Liegt die Datei imDokumente-Verzeichnis des Users theo und befindet sich theo in diesem Verzeichnis, dann würde der Aufruf lauten:
+	./datei_name.sh
+	/home/theo/Dokumente/datei_name.sh
+
+Parameter:
+	dem Skriptaufruf können Parameter mitgegeben werden.
+		./datei_name.sh param1 param2
+	Im Skript kann dann auf param1 mit der Variable $1, auf param2 mit $2 zugegriffen werden
+
+Variablen:
+	Eine Variable wird durch eine Wertzuweisung definiert:
+		var="Irgendeine Zahl oder Text"
+	Wird in dem Skript mit der Variable gearbeitet, dann wird beim Aufruf ein 4-Zeichen vorangestellt.
+		echo $var
+
+Kommandosubstitution:
+	Soll im Skript ein Bashkommando ausgeführt werden, und mit dem Ergebnis weiter gearbeitet werden, dann muss das Kommando in Backticks oder in Klammern mit $ stehen.
+	echo `ls`
+	echo $(ls)
+
+User zur Eingabe auffordern:
+	read var_name
+Die Konsoleneingabe des Users wird in der Variable var_name gespeichert und kann dort weitervearbeitet werden.
+
+Bedingungen:
+	if bedingung
+	then
+		anweisung
+	elif bedingung2; then
+		anweisung
+	else
+		anweisung
+	fi
+
+Schleife:
+	while bedingung
+	do
+		anweisung
+	done
+
+Besonderheiten bei Bedingungen:
+Überprüfung ob eine Datei existiert:
+	if [[ -e $filename ]]; then
+		...
+
+Überprüfung ob ein Argument übergeben wurde:
+	if [[ ! $1 ]]; then
+		...

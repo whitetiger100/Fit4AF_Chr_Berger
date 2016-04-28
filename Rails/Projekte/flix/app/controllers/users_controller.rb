@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @favorite_movies = @user.favorite_movies
   end
 
   # GET /users/new
