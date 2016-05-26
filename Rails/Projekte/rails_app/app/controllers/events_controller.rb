@@ -4,7 +4,28 @@ class EventsController < ApplicationController
 	before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
+		@events = Event.all
+		# if params[:filter] == "past"
+		# 	@events = Event.past
+		# elsif params[:filter] == "upcoming"
+		# 	@events = Event.upcoming
+		# elsif params[:filter] == "free"
+		# 	@events = Event.free				
+		# else
+		# 	@events = Event.all
+		# end
+	end
+
+	def past
+		@events = Event.past
+	end
+
+	def upcoming
 		@events = Event.upcoming
+	end
+
+	def free
+		@events = Event.free
 	end
 
 	def show

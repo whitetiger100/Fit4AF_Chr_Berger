@@ -23,4 +23,8 @@ class Movie < ActiveRecord::Base
 	def self.total_gross
 		where("total_gross >= 100000000")
 	end
+	scope :hits, -> {where("total_gross >= 150000").order("total_gross")}
+	scope :flops, -> {where("total_gross < 150000").order("total_gross")}
+	scope :upcoming, -> {where("released_on >= ?", Time.now).order("released_on")}
+	scope :recent, -> {where("released_on < ?", Time.now).order("released_on")}
 end

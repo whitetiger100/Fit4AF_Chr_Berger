@@ -4,7 +4,23 @@ class MoviesController < ApplicationController
 	before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
 	
 	def index
-		@movies = Movie.shown
+		@movies = Movie.all
+	end
+
+	def hits
+		@movies = Movie.hits
+	end
+
+	def flops
+		@movies = Movie.flops
+	end
+
+	def upcoming
+		@movies = Movie.upcoming
+	end
+
+	def recent
+		@movies = Movie.recent
 	end
 
 	def show

@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   resources :users
 
   resources :events do
+
+  	collection do
+  		get 'past'
+  		get 'upcoming'
+  		get 'free'
+  	end
     resources :registrations
     resources :likes
   end

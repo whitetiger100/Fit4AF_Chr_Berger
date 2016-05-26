@@ -7,6 +7,15 @@
   <div class="top-bar-section">
     <ul>
       <li><%= link_to "Alle Filme", movies_path %></li>
+      <li class="has-dropdown">
+        <a href="#">Movies gefiltert</a>
+        <ul class="dropdown">
+          <li><%= link_to "Hits", hits_movies_path %></li>
+          <li><%= link_to "Flops", flops_movies_path %></li>
+          <li><%= link_to "Zukünftige Movies", upcoming_movies_path %></li>
+          <li><%= link_to "Vergangene Movies", recent_movies_path %></li>
+        </ul>
+      </li>
     </ul>
     <ul class="right">
       <% if current_user %>

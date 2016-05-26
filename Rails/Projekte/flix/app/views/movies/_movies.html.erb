@@ -1,0 +1,43 @@
+		<% if @movies.size == 1 %>
+			<h1>Movie</h1>
+		<% else %>
+			<h1>Movies</h1>
+		<% end %> 
+
+<table border=1>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Release</th>
+			<th>Beschreibung</th>
+			<th>Rating</th>
+			<th>Total gross</th>
+			<th>Reviews</th>
+			<th>Show</th>
+			<% if current_user_admin? %>
+				<th>Edit</th>
+				<th>Del</th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<% @movies.each do |movie| %>
+			<tr>
+				<td><%= movie.title %></td>
+				<td><%= movie.released_on %></td>
+
+				<td><%= truncate(movie.description, length: 40, sepeterator: '') %></td>
+				<td><%= movie.rating %></td>
+				<td><%= flop_top(movie) %></td>
+				<td><%= link_to "<i class='fi-results-demographics icon-blue'></i>".html_safe, movie_reviews_path(movie.id) %></td>
+				<td><%= link_to "<i class='fi-video icon-green'></i>".html_safe, movie_path(movie.id) %></td>
+				<% if current_user_admin? %>
+					<td><%= link_to "<i class='fi-wrench icon-blue'></i>".html_safe, edit_movie_path(movie.id) %></td>
+					<td><%= link_to "<i class='fi-trash icon-red'></i>".html_safe, movie_path(movie.id), method: :delete, data: {confirm: "Wirklich löschen"} %></td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to "Neuen Movie anlegen", new_movie_path if current_user_admin? %>

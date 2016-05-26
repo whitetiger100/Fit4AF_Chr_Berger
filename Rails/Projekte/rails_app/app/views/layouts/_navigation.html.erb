@@ -7,6 +7,15 @@
   <div class="top-bar-section">
     <ul>
       <li><%= link_to "Alle Events", events_path %></li>
+      <li class="has-dropdown">
+        <a href="#">Event gefiltert</a>
+        <ul class="dropdown">
+          <li><%= link_to "Vergangene Events", past_events_path %></li>
+          <li><%= link_to "Zukünftige Events", upcoming_events_path %></li>
+          <li><%= link_to "Kostenlose Events", free_events_path %></li>
+          <!-- <li><%= link_to "Kostenlose Events", events_path(filter: "free") %></li> -->
+        </ul>
+      </li>
     </ul>
     <ul class="right">
       <% if current_user %>
