@@ -1,0 +1,6 @@
+Ermöglichen Sie folgende Aufrufe, denen im model scopes entsprechen.
+
+http://localhost:3000/movies/hits
+http://localhost:3000/movies/flops
+http://localhost:3000/movies/upcoming
+http://localhost:3000/movies/recent
