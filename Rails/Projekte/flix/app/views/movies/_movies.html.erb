@@ -8,6 +8,7 @@
 	<thead>
 		<tr>
 			<th>Title</th>
+			<th>Avatar</th>
 			<th>Release</th>
 			<th>Beschreibung</th>
 			<th>Rating</th>
@@ -24,8 +25,8 @@
 		<% @movies.each do |movie| %>
 			<tr>
 				<td><%= movie.title %></td>
+				<td><%= image_tag movie.poster_image_file.url(:thumb) %></td>
 				<td><%= movie.released_on %></td>
-
 				<td><%= truncate(movie.description, length: 40, sepeterator: '') %></td>
 				<td><%= movie.rating %></td>
 				<td><%= flop_top(movie) %></td>

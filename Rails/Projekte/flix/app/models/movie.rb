@@ -1,4 +1,6 @@
 class Movie < ActiveRecord::Base
+	mount_uploader :poster_image_file, AvatarUploader
+	
 	has_many :reviews, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 	has_many :users, through: :favorites
