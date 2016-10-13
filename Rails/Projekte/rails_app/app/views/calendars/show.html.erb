@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-12 columns text-center">
+    <div class="well controls">
+      <%= link_to calendar_path(@date - 1.month), class: "btn btn-default" do %>
+        <i class='fi-previous icon-blue'></i>
+      <% end %>
+      <%= "#{@date.strftime("%B")} #{@date.year}" %>
+      <%= link_to calendar_path(@date + 1.month), class: "btn btn-default" do %>
+        <i class="fi-next icon-blue"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <%= calendar @date do |date| %>
+      <%= date.day %>  
+      <ul>
+        <% if @events[date.day].present? %>
+          <% @events[date.day].each do |event| %>
+            <li><%= event.name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

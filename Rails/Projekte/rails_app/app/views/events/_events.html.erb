@@ -8,6 +8,7 @@
 	<thead>
 		<tr>
 			<th>NAME</th>
+			<th>Kategorie</th>
 			<th>Beschreibung</th>
 			<th>Datum</th>
 			<th>Location</th>
@@ -24,6 +25,7 @@
 		<% @events.each do |event| %>
 			<tr>
 				<td><%= event.name %></td>
+				<td><%= event.category.title if event.category.present? %></td>
 				<td><%= event.description %></td>
 				<td><%= event.start_at %></td>
 				<td><%= event.location %></td>

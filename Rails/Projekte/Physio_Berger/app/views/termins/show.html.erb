@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Behandlungstermin:</strong>
+  <%= @termin.behandlungstermin %>
+</p>
+
+<p>
+  <strong>Behandlungsart:</strong>
+  <%= @termin.behandlungsart %>
+</p>
+
+<%= link_to 'Edit', edit_termin_path(@termin) %> |
+<%= link_to 'Back', termins_path %>

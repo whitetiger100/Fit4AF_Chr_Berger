@@ -1,0 +1,34 @@
+<%= form_for [@user, @termin] do |f| %>
+  <% if @termin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@termin.errors.count, "error") %> prohibited this termin from being saved:</h2>
+
+      <ul>
+      <% @termin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :behandlungstermin %><br>
+    <%= f.datetime_select :behandlungstermin, :minute_step => 30, :start_hour => 8, :end_hour => 15 %>
+  </div>
+  <div class="field">
+    <%= f.label :behandlungsart %><br>
+    <%= f.select :behandlungsart, Termin::BEHANDLUNGSARTEN, prompt: "Bitte Behandlungsart wählen!" %>
+  </div>
+  <div class="field">
+    <%= f.label :physio %><br>
+    <%= f.collection_select(:physio_id, User.where(physio: true), :id, :username, prompt: "Bitte Physio auswählen!") %>
+  </div>
+    <div class="field">
+    <%= f.label :patient %><br>
+    <%= f.collection_select(:patient_id, User.where(patient: true), :id, :username, prompt: "Bitte Patienten auswählen!") %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

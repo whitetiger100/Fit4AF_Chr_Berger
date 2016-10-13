@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421170100) do
+ActiveRecord::Schema.define(version: 20160623152012) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160421170100) do
     t.text     "description"
     t.string   "image_file"
     t.integer  "capacity",    default: 1
+    t.integer  "category_id"
   end
 
   create_table "likes", force: :cascade do |t|

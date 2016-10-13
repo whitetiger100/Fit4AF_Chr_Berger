@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
+</p>
+
+<p>
+  <strong>Physio:</strong>
+  <%= @user.physio %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @user.patient %>
+</p>
+
+<p>
+  <strong>Vorname:</strong>
+  <%= @user.vorname %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Geburtsdatum:</strong>
+  <%= @user.geburtsdatum %>
+</p>
+
+<p>
+  <strong>Straße:</strong>
+  <%= @user.straße %>
+</p>
+
+<p>
+  <strong>Hausnummer:</strong>
+  <%= @user.hausnummer %>
+</p>
+
+<p>
+  <strong>Plz:</strong>
+  <%= @user.plz %>
+</p>
+
+<p>
+  <strong>Ort:</strong>
+  <%= @user.ort %>
+</p>
+
+<p>
+  <strong>Telefonnummer:</strong>
+  <%= @user.telefonnummer %>
+</p>
+
+<p>
+  <strong>Qualifikation:</strong>
+  <%= @user.qualifikation %>
+</p>
+
+<p>
+  <strong>Krankenkasse:</strong>
+  <%= @user.krankenkasse %>
+</p>
+
+<p>
+  <strong>Befund:</strong>
+  <%= @user.befund %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Termins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungstermin</th>
+      <th>Behandlungsart</th>
+      <th>Physio</th>
+      <th>Patient</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @termins.each do |termin| %>
+      <tr>
+        <td><%= termin.behandlungstermin %></td>
+        <td><%= termin.behandlungsart %></td>
+        <td><%= termin.physio.username %></td>
+        <td><%= termin.patient.username %></td>
+        <td><%= link_to 'Show', termin %></td>
+        <td><%= link_to 'Edit', edit_termin_path(termin) %></td>
+        <td><%= link_to 'Destroy', termin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Termin', new_termin_path %>

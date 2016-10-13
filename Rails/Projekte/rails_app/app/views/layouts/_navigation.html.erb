@@ -16,6 +16,8 @@
           <!-- <li><%= link_to "Kostenlose Events", events_path(filter: "free") %></li> -->
         </ul>
       </li>
+      <li><%= link_to "Kategorien", categories_path %></li>
+      <li><%= link_to "Kalender", calendar_path(Date.today) %></li>
     </ul>
     <ul class="right">
       <% if current_user %>

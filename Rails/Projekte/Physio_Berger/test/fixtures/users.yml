@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  email: MyString
+  password_digest: MyString
+  admin: false
+  physio: false
+  patient: false
+  vorname: MyString
+  name: MyString
+  geburtsdatum: 2016-09-08 18:25:05
+  straße: MyString
+  hausnummer: MyString
+  plz: 1
+  ort: MyString
+  telefonnummer: 1
+  qualifikation: MyString
+  krankenkasse: MyString
+  befund: MyText
+
+two:
+  username: MyString
+  email: MyString
+  password_digest: MyString
+  admin: false
+  physio: false
+  patient: false
+  vorname: MyString
+  name: MyString
+  geburtsdatum: 2016-09-08 18:25:05
+  straße: MyString
+  hausnummer: MyString
+  plz: 1
+  ort: MyString
+  telefonnummer: 1
+  qualifikation: MyString
+  krankenkasse: MyString
+  befund: MyText

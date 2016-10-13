@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @liked_events = @user.liked_events
+    
   end
 
   # GET /users/new
@@ -30,6 +31,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        #willkommensmail
+        UserMailer.welcome_email(@user).deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

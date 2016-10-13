@@ -1,0 +1,2 @@
+json.extract! user, :id, :username, :email, :password_digest, :admin, :physio, :patient, :vorname, :name, :geburtsdatum, :straße, :hausnummer, :plz, :ort, :telefonnummer, :qualifikation, :krankenkasse, :befund, :created_at, :updated_at
+json.url user_url(user, format: :json)

@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
 	has_many :users, through: :likes
 	has_many :likers, through: :likes, source: :user
 
+	belongs_to :category
+
 	validates :name, presence: true
 	validates :description, length: {minimum: 25}
 	validates :price, numericality: true
